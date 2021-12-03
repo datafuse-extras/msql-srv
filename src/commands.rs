@@ -1,5 +1,6 @@
 use crate::myc::constants::{CapabilityFlags, Command as CommandByte};
 
+#[allow(dead_code)]
 #[derive(Debug)]
 pub struct ClientHandshake {
     maxps: u32,

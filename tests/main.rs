@@ -166,11 +166,11 @@ fn it_inits_on_use_query_ok() {
         |_| unreachable!(),
         |_, _, _| unreachable!(),
         |schema, writer| {
-            assert_eq!(schema, "test");
+            assert_eq!(schema, "`test-x`");
             writer.ok()
         },
     )
-    .test(|db| match db.query_drop("USE `test`;") {
+    .test(|db| match db.query_drop("USE `test-x`;") {
         Ok(_) => assert!(true),
         Err(_) => assert!(false),
     });
