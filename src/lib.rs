@@ -259,7 +259,7 @@ pub trait MysqlShim<W: Write> {
 /// The options which passed to MysqlIntermediary struct
 #[derive(Debug, Clone, PartialEq, Eq, Default)]
 pub struct MysqlIntermediaryOptions {
-    process_use_statement_on_query: bool,
+    pub process_use_statement_on_query: bool,
 }
 
 /// A server that speaks the MySQL/MariaDB protocol, and can delegate client commands to a backend
