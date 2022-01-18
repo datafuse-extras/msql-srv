@@ -259,6 +259,7 @@ pub trait MysqlShim<W: Write> {
 /// The options which passed to MysqlIntermediary struct
 #[derive(Debug, Clone, PartialEq, Eq, Default)]
 pub struct MysqlIntermediaryOptions {
+    /// process use statement on the on_query handler
     pub process_use_statement_on_query: bool,
 }
 
