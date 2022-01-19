@@ -8,6 +8,7 @@ use std::thread;
 
 use msql_srv::*;
 use mysql::prelude::*;
+use mysql::Opts;
 use slab::Slab;
 
 fn main() {
@@ -25,8 +26,7 @@ fn main() {
 
     // we connect using MySQL bindings, but no MySQL server is running!
     let mut db =
-        mysql::Conn::new(mysql::Opts::from_url(&format!("mysql://127.0.0.1:{}", port)).unwrap())
-            .unwrap();
+        mysql::Conn::new(Opts::from_url(&format!("mysql://127.0.0.1:{}", port)).unwrap()).unwrap();
     assert_eq!(db.ping(), true);
     {
         let mut results = db
